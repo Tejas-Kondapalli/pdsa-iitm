@@ -55,3 +55,11 @@ def odd_one(L):
       return key.__name__
 print(odd_one(eval(input().strip())))
 ```
+
+## One more efficient solution without involving dictionaries. 
+```
+def odd_one(L):
+    for i in range(len(L)):
+        if type(L[i]) != type(L[i-1]) and type(L[i])!=type(L[i-2]):
+            return type(L[i]).__name__
+```
